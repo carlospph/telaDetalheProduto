@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Sectory = styled.section`
   background: #f2f2f2;
@@ -25,7 +26,6 @@ const Screen = styled.div`
     width: 100%;
     height: 500px;
     object-fit: cover;
-    margin-bottom: 1rem;
     border-radius: 0.5rem;
   }
 `;
@@ -45,8 +45,14 @@ const Thumbnail = styled.div`
   }
 `;
 
+const ContainerDatasProduct = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
 const Titulo = styled.h2`
-  margin: 0 0 0.4em 0;
+  margin: 0;
   padding: 0;
   font-size: 2em;
 `;
@@ -59,8 +65,8 @@ const Reference = styled.div`
 `;
 
 const Status = styled.div`
-  margin: 0.4em 0;
-  padding: 0.4em;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -93,14 +99,14 @@ const StatusNumberAvaliation = styled.div`
 
 const Price = styled.div`
   color: #474747;
-  margin: 0.4em 0;
-  padding: 0.5em 0 0 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   align-items: end;
 
-  & span.simbolo{
-    padding-bottom:3px;
-    padding-right:3px;
+  & span.simbolo {
+    padding-bottom: 3px;
+    padding-right: 3px;
   }
 
   & span.priceAtual {
@@ -113,16 +119,15 @@ const Price = styled.div`
     color: gray;
     font-size: 16px;
     text-decoration: line-through;
-    padding-bottom:3px;
-    padding-left:1rem;
-    font-weight:800;
+    padding-bottom: 3px;
+    padding-left: 1rem;
+    font-weight: 800;
   }
-}
 `;
 
 const Description = styled.div`
-  margin: 0.4em 0;
-  padding: 0.5em 0;
+  margin: 0;
+  padding: 0em;
 `;
 
 const TitleDescription = styled.h4`
@@ -138,15 +143,18 @@ const TextDescription = styled.p`
 `;
 
 const SizeProduct = styled.div`
-  margin: 0.4em 0;
-  padding: 0.5em 0;
+  margin: 0;
   display: flex;
-  gap: 14px;
+  // gap: 14px;
   flex-wrap: wrap;
+  gap: 10px;
 
   & h5 {
     flex-grow: 1;
     width: 100%;
+    margin: 0;
+    parging: 0;
+    margin-top: 4px;
   }
 
   & button {
@@ -157,6 +165,7 @@ const SizeProduct = styled.div`
     background: white;
     border-radius: 6px;
     transition: 0.2s all;
+    margin-top: 3px;
   }
 
   & button:hover {
@@ -167,14 +176,16 @@ const SizeProduct = styled.div`
 `;
 
 const ColorProduct = styled.div`
-  margin: 0.4em 0;
-  padding: 0.5em 0;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 12px;
+
   & h5 {
     flex-grow: 1;
     width: 100%;
+    margin-top: 4px;
   }
 
   & span.item-blue {
@@ -220,50 +231,83 @@ const Btn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 1.5rem;
+  padding: 0 3rem;
   height: 40px;
   cursor: pointer;
+  width: fit-content;
+  margin: 0.7rem 0 0 0;
 `;
 
 export function Tela() {
+  const [ImageUrl, setUrlImage] = useState(
+    "https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
+  );
+
+  function HandleFoto1() {
+    setUrlImage(
+      "https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
+    );
+  }
+
+  function HandleFoto2() {
+    setUrlImage(
+      "https://images.pexels.com/photos/8566466/pexels-photo-8566466.jpeg"
+    );
+  }
+
+  function HandleFoto3() {
+    setUrlImage(
+      "https://images.pexels.com/photos/176842/pexels-photo-176842.jpeg"
+    );
+  }
+
+  function HandleFoto4() {
+    setUrlImage(
+      "https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg"
+    );
+  }
+
   return (
     <Sectory>
       <Container>
         <div>
           <Screen>
-            <img
-              src="https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
-              alt="Imagem principal"
-            />
+            <img src={ImageUrl} alt="Imagem principal" />
           </Screen>
+
           <ContainerThumbnail>
             <Thumbnail>
               <img
                 src="https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
                 alt="Imagem 1"
+                onClick={HandleFoto1}
               />
             </Thumbnail>
             <Thumbnail>
               <img
                 src="https://images.pexels.com/photos/8566466/pexels-photo-8566466.jpeg"
                 alt="Imagem 2"
+                onClick={HandleFoto2}
               />
             </Thumbnail>
             <Thumbnail>
               <img
                 src="https://images.pexels.com/photos/176842/pexels-photo-176842.jpeg"
                 alt="Imagem 3"
+                onClick={HandleFoto3}
               />
             </Thumbnail>
             <Thumbnail>
               <img
                 src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg"
-                alt="Imagem principal"
+                alt="Imagem 4"
+                onClick={HandleFoto4}
               />
             </Thumbnail>
           </ContainerThumbnail>
         </div>
-        <div>
+
+        <ContainerDatasProduct>
           <Titulo>Tênis Nike Revolution 6 Next Nature Masculino</Titulo>
           <Reference>Casual | Nike | REF:38416711</Reference>
 
@@ -312,7 +356,8 @@ export function Tela() {
             <span className="item-white"></span>
           </ColorProduct>
           <Btn>Comprar</Btn>
-        </div>
+        </ContainerDatasProduct>
+        {/* fim do containerDatas*/}
       </Container>
     </Sectory>
   );
