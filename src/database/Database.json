@@ -1,0 +1,16 @@
+[
+  {
+    "id": "prd-1001",
+    "title": "Tênis",
+    "priceOld": "R$ 300,00",
+    "priceAtual": "269,00",
+    "description": "tenis modelo 1"
+  },
+
+  {
+    "sizeProduto": ["36", "39", "40", "41", "42"]
+  },
+  {
+    "cores": ["blue", "branco", "red", "black"]
+  }
+]
