@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
 {
     "id":"prd-1001",
     "title": "Tênis",
@@ -15,3 +16,20 @@
     
 }
 ]
+=======
+  {
+    "id": "prd-1001",
+    "title": "Tênis",
+    "priceOld": "R$ 300,00",
+    "priceAtual": "269,00",
+    "description": "tenis modelo 1"
+  },
+
+  {
+    "sizeProduto": ["36", "39", "40", "41", "42"]
+  },
+  {
+    "cores": ["blue", "branco", "red", "black"]
+  }
+]
+>>>>>>> 4788b6f55caebfa9031f7945d5a5ecac37df9c2d
