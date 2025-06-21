@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useState } from "react";
 
 const Sectory = styled.section`
   background: #f2f2f2;
@@ -226,21 +227,35 @@ const Btn = styled.button`
 `;
 
 export function Tela() {
+  const [UrlImage, setUrlImage] = useState(
+    "https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
+  );
+
+  function thumbnail1() {
+    setUrlImage(
+      "https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
+    );
+  }
+
+  function thumbnail2() {
+    setUrlImage(
+      "https://images.pexels.com/photos/8566466/pexels-photo-8566466.jpeg"
+    );
+  }
+
   return (
     <Sectory>
       <Container>
         <div>
           <Screen>
-            <img
-              src="https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
-              alt="Imagem principal"
-            />
+            <img src={UrlImage} alt="Imagem principal" />
           </Screen>
           <ContainerThumbnail>
             <Thumbnail>
               <img
                 src="https://images.pexels.com/photos/8294659/pexels-photo-8294659.jpeg"
                 alt="Imagem 1"
+                onClick={thumbnail1}
               />
             </Thumbnail>
             <Thumbnail>
